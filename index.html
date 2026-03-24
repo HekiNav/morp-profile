@@ -9,26 +9,35 @@
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div id="root"></div>
-  <script src="./index.js" type="text/babel" data-presets="react,stage-3">
+  <script type="text/babel" data-presets="react,stage-3">
     const Example = () => {
       const [count, setCount] = React.useState(0);
       React.useEffect(() => {
         document.title = `You clicked ${count} times`;
       });
       return (
-        <div>
-          <p>You clicked {count} times</p>
-          <button onClick={() => setCount(count + 1)}>
-            Click me
-          </button>
+        <div id="main" className="p-4 bg-blue-100 min-h-screen">
+          <div className="w-fit">
+          <p className="text-xl mb-2 w-full text-center font-[Knewave] text-white bg-orange-200 w-fit rounded-lg p-1">You clicked {count} {count == 1 ? "time" : "times"}</p>
+          <Button onClick={() => setCount(count + 1)}>
+            <span className="px-4 h-min w-max">Click me</span>
+          </Button>
+          </div>
         </div>
       );
     };
-
+    function Button(props:HTMLAttributes<HTMLButtonElement>) {
+      return (
+      <button className={`p-5 pt-6 rounded-full bg-blue-300 ease-out transition active:bg-blue-300 hover:bg-blue-400 text-white font-[Modak] text-5xl`} {...props}>{props.children}</button>
+      )
+    }
     const root = ReactDOM.createRoot(document.getElementById("root"))
     root.render(<Example />);
   </script>
