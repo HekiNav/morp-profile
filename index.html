@@ -25,17 +25,48 @@
       return (
         <div id="main" className="p-4 bg-blue-100 min-h-screen">
           <div className="w-fit">
-          <p className="text-xl mb-2 w-full text-center font-[Knewave] text-white bg-orange-200 w-fit rounded-lg p-1">You clicked {count} {count == 1 ? "time" : "times"}</p>
-          <Button onClick={() => setCount(count + 1)}>
+            <div class="relative inline-block mb-10 text-blue-400">
+  <h1 class="relative z-10 px-10 py-5 text-2xl font-[Modak] text-5xl font-medium">
+    Hi, I'm Hekinav
+  </h1>
+  <svg class="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] overflow-visible"
+       viewBox="0 0 400 130" preserveAspectRatio="none">
+    <path
+      fill="#eff6ff" stroke="#3b82f6" stroke-width="2.2"
+      d="M 38 112 C 14 114 8 102 10 90 C 4 84 2 72 12 65
+         C 4 58 6 44 18 42 C 14 30 24 22 36 26
+         C 34 10 48 4 60 10 C 58 2 72 -4 84 6
+         C 88 -4 104 2 108 8 C 110 0 128 0 130 10
+         C 136 2 150 -2 156 8 C 162 0 176 4 178 12
+         C 184 2 200 -2 206 8 C 214 0 228 4 232 12
+         C 240 0 256 2 258 12 C 264 2 280 -4 286 8
+         C 290 -2 308 4 310 12 C 316 2 334 0 338 10
+         C 344 4 360 10 362 22 C 374 20 386 32 384 44
+         C 396 50 398 64 390 70 C 400 78 396 92 384 94
+         C 390 106 378 118 364 114
+         C 356 126 340 130 330 120 C 320 128 306 128 298 118
+         C 290 126 274 128 268 118 C 260 126 244 124 240 114
+         C 232 124 216 128 210 118 C 200 126 184 126 178 114
+         C 170 124 154 128 148 116 C 138 126 122 126 118 114
+         C 108 124 92 126 88 114 C 78 126 62 122 56 112
+         C 50 120 40 118 38 112 Z"/>
+  </svg>
+</div>
+          <p className="text-xl mb-2 w-full text-center font-[Knewave] text-white bg-orange-200 w-fit rounded-lg p-5">
+          <h1 className="text-4xl font-[Modak]">Here's a React demo</h1>
+            
+            You clicked {count} {count == 1 ? "time" : "times"}
+            <br/>
+            <Button onClick={() => setCount(count + 1)}>
             <span className="px-4 h-min w-max">Click me</span>
-          </Button>
+          </Button></p>
           </div>
         </div>
       );
     };
     function Button(props:HTMLAttributes<HTMLButtonElement>) {
       return (
-      <button className={`p-5 pt-6 rounded-full bg-blue-300 ease-out transition active:bg-blue-300 hover:bg-blue-400 text-white font-[Modak] text-5xl`} {...props}>{props.children}</button>
+      <button className={`p-5 pt-6 rounded-full bg-blue-300 ease-out transition active:bg-blue-300 hover:bg-blue-400 text-white font-[Modak] text-3xl`} {...props}>{props.children}</button>
       )
     }
     const root = ReactDOM.createRoot(document.getElementById("root"))
