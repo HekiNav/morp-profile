@@ -1,8 +1,16 @@
-import { createRoot } from 'react-dom/client';
-
-// Clear the existing HTML content
-document.body.innerHTML = '<div id="app"></div>';
-
-// Render your React component instead
-const root = createRoot(document.getElementById('app'));
-root.render(<h1>Hello, world</h1>);
+const Example = () => {
+    const [count, setCount] = React.useState(0);
+    React.useEffect(() => {
+        document.title = `You clicked ${count} times`;
+    });
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+};
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<Example />);
